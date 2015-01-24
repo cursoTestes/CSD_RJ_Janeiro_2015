@@ -81,25 +81,7 @@
 	</target>
 
 	<target name="test-report" description="Produz os relatórios de teste, a partir das informações coletadas pela execução dos mesmos" depends="init">
-		<junitreport format="noframes">
-			<fileset dir="report">
-				<include name="TEST-*.xml"/>
-			</fileset>
-			<report format="noframes"/>
-		</junitreport>
-
-		<move file="junit-noframes.html" tofile="report_all.html"/>
-
-		<junitreport>
-			<fileset dir="report">
-				<include name="TEST-*UnitTest.xml"/>
-			</fileset>
-			<report format="noframes"/>
-		</junitreport>
-
-		<move file="junit-noframes.html" tofile="report_unit.html"/>	
-		
-
+	
 		<available file="FAILED" property="failed"/>
 		<fail if="failed"><![CDATA[Testes falharam.]]></fail>
 	</target>
