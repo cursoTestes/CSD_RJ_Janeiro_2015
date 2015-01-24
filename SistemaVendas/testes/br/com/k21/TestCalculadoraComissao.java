@@ -32,7 +32,7 @@ public class TestCalculadoraComissao {
 		
 		comissaoObtida = calculadoraComissao.calcular(venda);
 		
-		assertEquals(comissaoEsperada, comissaoObtida, 0.000001);
+		assertEquals(comissaoEsperada, comissaoObtida, 0.001);
 	}
 	
 	@Test
