@@ -29,7 +29,7 @@ public class TestCalculadoraRoyalties {
 		int mes = 1;
 		int ano = 2014;
 		Double esperado = 0.0;
-		
+	
 		CalculadoraRoyalties calcRoyalties = new CalculadoraRoyalties(repository, calcComissao);
 		Double resultado = calcRoyalties.calcula(mes, ano);
 		
@@ -37,13 +37,16 @@ public class TestCalculadoraRoyalties {
 	}
 	
 	@Test
-	public void teste_1_Venda_de_100_Reais_Retorna_19() {
+	public void teste_para_um_mes_com_uma_venda() {
 		
 		
 		int mes = 1;
 		int ano = 2014;
+		int valorVenda = 100;
 		Double esperado = 19D;
-		List<Venda> listVendas = Arrays.asList(new Venda(1, 1, mes, ano, 100));
+
+		List<Venda> listVendas = Arrays.asList(new Venda(1, 1, mes, ano, valorVenda));
+		
 		Mockito.when(repository.obterVendasPorMesEAno(ano, mes)).thenReturn(listVendas);
 		Mockito.when(calcComissao.calcular(100.0)).thenReturn(5.0);
 		
@@ -51,6 +54,9 @@ public class TestCalculadoraRoyalties {
 		Double resultado = calcRoyalties.calcula(mes, ano);
 		
 		assertEquals(esperado, resultado);
+		
+		Mockito.verify(repository).obterVendasPorMesEAno(Mockito.anyInt(), Mockito.anyInt());
+		
 	}
 	
 	
