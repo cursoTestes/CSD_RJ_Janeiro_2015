@@ -1,14 +1,8 @@
 package br.com.k21;
 
-import static org.junit.Assert.*;
-import junit.framework.Assert;
-
-import org.dbunit.DBTestCase;
 import org.junit.Test;
 
-import br.com.k21.Vendedor;
 import br.com.k21.dao.VendaDAO;
-import br.com.k21.dao.VendedorDAO;
 import br.com.k21.infra.BaseDBTest;
 
 public class VendaDAOTest extends BaseDBTest {

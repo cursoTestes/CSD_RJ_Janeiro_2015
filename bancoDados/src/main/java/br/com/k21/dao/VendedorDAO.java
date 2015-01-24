@@ -6,8 +6,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-import junitx.framework.ListAssert;
-
 import br.com.k21.Vendedor;
 
 
