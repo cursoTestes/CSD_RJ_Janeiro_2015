@@ -81,7 +81,7 @@
 	</target>
 
 	<target name="test-report" description="Produz os relatórios de teste, a partir das informações coletadas pela execução dos mesmos" depends="init">
-		<junitreport>
+		<junitreport format="noframes">
 			<fileset dir="report">
 				<include name="TEST-*.xml"/>
 			</fileset>
