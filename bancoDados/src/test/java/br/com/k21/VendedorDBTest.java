@@ -75,7 +75,6 @@ public class VendedorDBTest extends BaseDBTest
         //id do usuario felippe
         assertEquals( 2, lista.get(0).getId());
         
-        Assert.assertTrue("Ie ie pegadinha do malandro" , false);
     }
 
 }
